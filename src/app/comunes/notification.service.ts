@@ -34,6 +34,9 @@ export class NotificationService {
     const id = this.listado.length === 0 ? 1 :
       (this.listado[this.listado.length - 1].Id + 1);
     this.listado.push(new Notification(id, msg, tipo));
+    if (tipo === NotificationType.error) {
+      this.log.error(`NOTIFICACION: ${msg}`);
+    }
   }
 
   public remove(index: number) {

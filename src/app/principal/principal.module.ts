@@ -1,10 +1,16 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from '../principal/home/home.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent
+  ],
+  exports: [
+    HomeComponent,
+  ],
   imports: [
     CommonModule
   ]
