@@ -1,22 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalModule } from './principal';
 import { ComunesModule } from './comunes';
-import { IndraCoreModule } from 'src/indra-core';
+import { IndraCoreModule, LoggerService, ERROR_LEVEL } from 'src/indra-core';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule,
     PrincipalModule, ComunesModule, IndraCoreModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    LoggerService,
+    { provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
