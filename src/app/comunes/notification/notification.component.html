@@ -1,0 +1,11 @@
+<div *ngIf="VM.HayNotificaciones">
+  <ul>
+    <li *ngFor="let item of VM.Listado; let indice=index">
+      {{item.Message}}
+      <button type="button" (click)="VM.remove(indice)">X</button>
+    </li>
+  </ul>
+  <div>
+    <button type="button" (click)="VM.clear()">Cerrar</button>
+  </div>
+</div>
