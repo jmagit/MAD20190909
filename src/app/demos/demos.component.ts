@@ -16,6 +16,7 @@ export class DemosComponent implements OnInit {
     { id: 4, nombre: 'SEVILLA'},
   ];
   idProvincia = 2;
+  fontSize = 16;
 
   resultado: string;
   visible = true;
