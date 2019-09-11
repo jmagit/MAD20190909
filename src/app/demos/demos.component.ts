@@ -33,6 +33,27 @@ export class DemosComponent implements OnInit {
     this.resultado = `Dice ${algo}`;
   }
 
+  calcula(a: number, b: number): number {
+    return a + b;
+  }
+
+  cambia() {
+    this.visible = !this.visible;
+    this.estilo.importante = !this.estilo.importante;
+    this.estilo.error = !this.estilo.error;
+  }
+
+  public add(msg: string) {
+    if (!msg || msg === '') {
+      this.log.error('Falta provincia.');
+      return;
+    }
+    const id = this.listado.length === 0 ? 1 :
+      (this.listado[this.listado.length - 1].id + 1);
+    this.listado.push({id, nombre: msg});
+    this.idProvincia = id;
+  }
+
   ngOnInit() {
   }
 
