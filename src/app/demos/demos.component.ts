@@ -10,10 +10,10 @@ import { LoggerService } from 'src/indra-core';
 export class DemosComponent implements OnInit {
   nombre = 'Mundo';
   listado = [
-    { id: 1, nombre: 'Madrid'},
-    { id: 2, nombre: 'barcelona'},
-    { id: 3, nombre: 'A coruña'},
-    { id: 4, nombre: 'SEVILLA'},
+    { id: 1, nombre: 'Madrid' },
+    { id: 2, nombre: 'barcelona' },
+    { id: 3, nombre: 'A coruña' },
+    { id: 4, nombre: 'SEVILLA' },
   ];
   idProvincia = 2;
   fontSize = 16;
@@ -51,11 +51,30 @@ export class DemosComponent implements OnInit {
     }
     const id = this.listado.length === 0 ? 1 :
       (this.listado[this.listado.length - 1].id + 1);
-    this.listado.push({id, nombre: msg});
+    this.listado.push({ id, nombre: msg });
     this.idProvincia = id;
   }
 
   ngOnInit() {
+  }
+
+  // tslint:disable:member-ordering
+  idiomas = [
+    { codigo: 'es', region: 'España' },
+    { codigo: 'pt', region: 'Portuges' },
+    { codigo: 'en-US', region: 'USA' }
+  ];
+  idioma = this.idiomas[0].codigo;
+  resultados: any[] = [];
+  valCalculadora = 666;
+  // tslint:enable:member-ordering
+
+  ponResultado(origen: string, valor: any) {
+    this.resultados.push({
+      pos: this.resultados.length + 1,
+      origen,
+      valor
+    });
   }
 
 }

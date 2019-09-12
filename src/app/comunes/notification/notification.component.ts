@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationService } from '../notification.service';
+import { NotificationService, NotificationType } from '../notification.service';
 
 @Component({
   selector: 'app-notification',
@@ -7,6 +7,7 @@ import { NotificationService } from '../notification.service';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
+  public readonly NotificationType = NotificationType;
 
   constructor(private vm: NotificationService) { }
 

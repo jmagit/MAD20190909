@@ -7,8 +7,8 @@ export enum NotificationType {
 
 export class Notification {
   constructor(private id: number,
-    private msg: string,
-    private tipo: NotificationType = NotificationType.error) { }
+              private msg: string,
+              private tipo: NotificationType = NotificationType.error) { }
   public get Id() { return this.id; }
   public get Message() { return this.msg; }
   public get Tipo() { return this.tipo; }
