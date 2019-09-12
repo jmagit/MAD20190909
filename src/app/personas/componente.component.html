@@ -1,0 +1,6 @@
+<ng-container [ngSwitch]="VM.Modo">
+  <app-persona-add *ngSwitchCase="'add'"></app-persona-add>
+  <app-persona-edit *ngSwitchCase="'edit'"></app-persona-edit>
+  <app-persona-view *ngSwitchCase="'view'"></app-persona-view>
+  <app-persona-list *ngSwitchDefault ></app-persona-list>
+</ng-container>

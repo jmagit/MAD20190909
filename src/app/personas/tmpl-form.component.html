@@ -1,0 +1,20 @@
+<form #miForm="ngForm">
+  <p>
+    Código:
+    <input type="number" id="id" name="id" [(ngModel)]="VM.Elemento.id" #id="ngModel">
+    {{VM.Elemento.id}}
+    <br>
+    Nombre:
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="VM.Elemento.nombre" #nombre="ngModel">
+    <br>
+    Apellidos:
+    <input type="text" id="apellidos" name="apellidos" [(ngModel)]="VM.Elemento.apellidos" #apellidos="ngModel">
+    <br>
+    Edad:
+    <input type="number" id="edad" name="edad" [(ngModel)]="VM.Elemento.edad" #edad="ngModel">
+  </p>
+  <p>
+    <input type="button" value="Enviar" (click)="VM.send()" >
+    <input type="button" value="Volver" (click)="VM.cancel()" >
+  </p>
+</form>
