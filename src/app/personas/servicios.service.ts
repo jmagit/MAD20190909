@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoggerService } from 'src/indra-core';
 import { NotificationService } from '../comunes';
-
-export type ModoCRUD = 'list' | 'add' | 'edit' | 'view' | 'delete';
+import { ModoCRUD } from '../base-code/crud';
 
 @Injectable({
   providedIn: 'root'
