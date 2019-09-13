@@ -6,7 +6,7 @@ registerLocaleData(localeEs, 'es', localeEsExtra);
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,8 @@ import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PERSONAS_COMPONENT } from './personas/componente.component';
 import { from } from 'rxjs';
+import { PersonasViewModelService, PersonasViewModelDAOService } from './personas/servicios.service';
+import { AjaxWaitInterceptor } from './principal/ajax-wait';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { from } from 'rxjs';
     LoggerService,
     { provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
     { provide: LOCALE_ID, useValue: 'es-ES'},
+    { provide: PersonasViewModelService, useClass: PersonasViewModelDAOService},
+    { provide: HTTP_INTERCEPTORS, useClass: AjaxWaitInterceptor, multi: true, },
   ],
   bootstrap: [AppComponent]
 })

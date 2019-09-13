@@ -1,15 +1,16 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../principal/home/home.component';
+import { AjaxWaitComponent } from './ajax-wait';
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent, AjaxWaitComponent,
   ],
   exports: [
-    HomeComponent,
+    HomeComponent, AjaxWaitComponent,
   ],
   imports: [
     CommonModule
