@@ -2,18 +2,21 @@ import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../principal/home/home.component';
 import { AjaxWaitComponent } from './ajax-wait';
+import { MenuComponent } from './menu/menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent, AjaxWaitComponent,
+    HomeComponent, AjaxWaitComponent, MenuComponent, PageNotFoundComponent,
   ],
   exports: [
-    HomeComponent, AjaxWaitComponent,
+    HomeComponent, AjaxWaitComponent, MenuComponent, PageNotFoundComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule, AppRoutingModule,
   ]
 })
 export class PrincipalModule {
