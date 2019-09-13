@@ -6,6 +6,7 @@ registerLocaleData(localeEs, 'es', localeEsExtra);
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { DemosComponent } from './demos/demos.component';
 import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PERSONAS_COMPONENT } from './personas/componente.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { PERSONAS_COMPONENT } from './personas/componente.component';
     PERSONAS_COMPONENT,
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, HttpClientModule,
     PrincipalModule, ComunesModule, IndraCoreModule,
     AppRoutingModule,
   ],
